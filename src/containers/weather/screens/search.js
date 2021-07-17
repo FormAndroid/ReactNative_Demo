@@ -10,19 +10,19 @@ const Search = (props) => {
 
     const onSearch = () => {
         // Navigation avec envoie de donnée
-        nav.navigate('result', {city});
+        nav.navigate('weather/result', { city, message: `La météo de ${city}` });
     }
- 
+
     return (
         <View style={globalStyle.screen}>
             <Text>Veuillez entrer le nom d'une ville</Text>
             <TextInput value={city} onChangeText={(text) => setCity(text)}
-                 style={globalStyle.input} />
-            <Button 
+                style={globalStyle.input} />
+            <Button
                 title='Rechercher'
                 color='#FE0160'
                 onPress={onSearch}
-                />
+            />
         </View>
     )
 }
